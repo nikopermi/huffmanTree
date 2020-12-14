@@ -67,21 +67,7 @@ public class huffmanTree{
         }
         return compressStream.toString();
     }
-
-    private String compress(tree root, StringBuilder ans, String a, int index){
-        if(charList.get(index).getX() == root.pair.getX()){
-            ans.append(a);
-            a = "";
-        }
-        if(index == charList.size()-1)
-            return a;
-        else if(root.left != null && root.right != null){
-            index++;
-            root = root.left;
-
-        }
-        return compress(root.left, ans, a, index) + compress(root.right, ans, a, index);
-    }
+    
 
     public String decompress(String input){
         StringBuilder decompressedAnswer = new StringBuilder();
